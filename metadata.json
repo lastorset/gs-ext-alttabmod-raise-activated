@@ -3,5 +3,6 @@
     "uuid": "Alt_Tab_Mod_Only_Raise_Activated_Window@dsboger.com.br", 
     "name": "Alt Tab Mod: Only Raise Activated Window", 
     "description": "When you Alt+Tab to an app (instead of Alt+<Key Above Tab> to a window), default behavior is to bring up all windows of the selected app and activate the most recently used. This extension modifies Alt+Tab to always bring up only the activated window.\n\nOBS: not guaranteed to work together with other extensions that also modify Alt Tab popup. Tested only with 'Alt Tab Workspace' and other 'Alt Tab Mod: ...'.",
-    "version": 1
+    "version": 1,
+    "url": "https://github.com/dsboger/gs-ext-alttabmod-raise-activated"
 }
