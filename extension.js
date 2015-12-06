@@ -18,6 +18,7 @@
 const Mainloop = imports.mainloop;
 const Main = imports.ui.main;
 const AltTab = imports.ui.altTab;
+const Popup = AltTab.AppSwitcherPopup;
 
 let _originalFinish;
 let _originalAppActivated;
@@ -38,11 +39,11 @@ function init(metadata) {
 }
 
 function enable() {
-    _originalFinish = AltTab.AppSwitcherPopup.prototype._finish;
-    AltTab.AppSwitcherPopup.prototype._finish = _modifiedFinish;
+    _originalFinish = Popup.prototype._finish;
+    Popup.prototype._finish = _modifiedFinish;
 }
 
 function disable() {
-    AltTab.AppSwitcherPopup.prototype._finish = _originalFinish;
+    Popup.prototype._finish = _originalFinish;
     _originalFinish = null;
 }
