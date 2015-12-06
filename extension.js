@@ -30,9 +30,7 @@ function _modifiedFinish(timestamp) {
     else
         Main.activateWindow(appIcon.cachedWindows[this._currentWindow], timestamp);
 
-    //this.parent(timestamp);
-    // ^ would call this.destroy() if it worked
-    this.destroy();
+    this.parent(timestamp);
 }
 
 function init(metadata) {
@@ -40,7 +38,7 @@ function init(metadata) {
 
 function enable() {
     _originalFinish = Popup.prototype._finish;
-    Popup.prototype._finish = _modifiedFinish;
+    Popup.prototype._finish = Popup.wrapFunction('_finish', _modifiedFinish);
 }
 
 function disable() {
